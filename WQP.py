@@ -19,23 +19,7 @@ Stations = "Stations"
 StationID = "StationID"
 Unit = "Unit"
 
-"""Remove _WQX string from stationID
-_WQX separates legacy EPA data from modern EPA data
-the addition of this suffix creates unecessary station duplicates""" 
-#arcpy.CalculateField_management(Results,fieldName,"!StationID!.lstrip('_WQX')", "PYTHON_9.3")
-#arcpy.CalculateField_management(Results,fieldName,"!StationID!.strip('')", "PYTHON_9.3")
-#print 'Results _WQX and whitespace removal complete'
-#arcpy.CalculateField_management(Stations,fieldName,"!StationID!.lstrip('_WQX')", "PYTHON_9.3")
-#arcpy.CalculateField_management(Stations,fieldName,"!StationID!.strip('')", "PYTHON_9.3")
-#print 'Stations _WQX removal complete'
-#
-## remove duplicates
-#arcpy.DeleteIdentical_management(Stations,fieldName,"100 meters","")
-#print 'Duplicates deleted'
-#
-## remove trailing white space in all fields
-#arcpy.CalculateField_management(Results,fieldName,"!Unit!.strip()", "PYTHON_9.3")
-#print 'unit spaces stripped'
+
 
 with arcpy.da.Editor("C:/Temp/test.gdb") as edit:
     """Remove _WQX string from stationID
@@ -51,11 +35,11 @@ with arcpy.da.Editor("C:/Temp/test.gdb") as edit:
         row.setValue(StationID, StationID.strip('_WQX'))
     print 'result WQX stripped'
     
-with arcpy.da.Editor("C:/Temp/test.gdb") as edit:
+
     arcpy.DeleteIdentical_management(Stations,StationID,"100 meters")
     print 'Duplicate Stations Removed'    
 
-with arcpy.da.Editor("C:/Temp/test.gdb") as edit:
+
     # remove white space
     quer = "StationID LIKE '% %'"    
     cursor= arcpy.UpdateCursor(fc,quer)
