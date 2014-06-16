@@ -43,3 +43,8 @@ def quarterfill(tow, ran, sec, quad, x, a):
  else:
   j=''
  return '('+str(j)+'-'+str(tow)+'-'+str(ran)+')'+str(sec)+q+qq+qqq
+ 
+ 
+  g = {'NE':'a','NW':'b','SW':'c','SE':'d'}
+ p = {1:'A',2:'B',3:'C',4:'D'}
+ 
