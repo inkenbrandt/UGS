@@ -87,16 +87,16 @@ ax1.text(25,65, 'Mg type')
 
 # loop to use different symbol marker for each water type
 for i in range(0, nosamples):
-    if obs[i, 0] == 1:
-        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'rs', ms = markersize)
-    if obs[i, 0] == 2:
-        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'b>', ms = markersize)
-    if obs[i, 0] == 3:
-        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'c<', ms = markersize)
-    if obs[i, 0] == 4:
-        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'go', ms = markersize)
-    if obs[i, 0] == 5:
-        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'm^', ms = markersize)
+    if obs[i, 0] > 0:
+        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'ro', ms = markersize)
+#    if obs[i, 0] == 2:
+#        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'b>', ms = markersize)
+#    if obs[i, 0] == 3:
+#        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'c<', ms = markersize)
+#    if obs[i, 0] == 4:
+#        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'go', ms = markersize)
+#    if obs[i, 0] == 5:
+#        ax1.plot(100*obs[i,Ca]/(obs[i,EC]/100), 100*obs[i,Mg]/(obs[i,EC]/100), 'm^', ms = markersize)
 
 ax1.set_xlim(0,100)
 ax1.set_ylim(0,100)
@@ -120,16 +120,16 @@ text(5,65, 'SO4 type')
 
 # loop to use different symbol marker for each water type
 for i in range(0, nosamples):
-    if obs[i, 0] == 1:
-        h1=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'rs', ms = markersize)
-    if obs[i, 0] == 2:
-        h2=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'b>', ms = markersize)
-    if obs[i, 0] == 3:
-        h3=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'c<', ms = markersize)
-    if obs[i, 0] == 4:
-        h4=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'go', ms = markersize)
-    if obs[i, 0] == 5:
-        h5=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'm^', ms = markersize)
+    if obs[i, 0] > 0:
+        h1=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'ro', ms = markersize)
+#    if obs[i, 0] == 2:
+#        h2=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'b>', ms = markersize)
+#    if obs[i, 0] == 3:
+#        h3=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'c<', ms = markersize)
+#    if obs[i, 0] == 4:
+#        h4=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'go', ms = markersize)
+#    if obs[i, 0] == 5:
+#        h5=plot(100*obs[i,Cl]/(obs[i,EC]/100), 100*obs[i,SO4]/(obs[i,EC]/100), 'm^', ms = markersize)
 xlim(0,100)
 ylim(0,100)
 xlabel('Cl (% meq) =>')
@@ -150,16 +150,16 @@ ax2.plot([90, 90],[0, 100],'k--')
 
 # loop to use different symbol marker for each water type
 for i in range(0, nosamples):
-    if obs[i, 0] == 1:
-        h1=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'rs', ms = markersize)
-    if obs[i, 0] == 2:
-        h2=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'b>', ms = markersize)
-    if obs[i, 0] == 3:
-        h3=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'c<', ms = markersize)
-    if obs[i, 0] == 4:
-        h4=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'go', ms = markersize)
-    if obs[i, 0] == 5:
-        h5=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'm^', ms = markersize)
+    if obs[i, 0] > 0:
+        h1=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'ro', ms = markersize)
+#    if obs[i, 0] == 2:
+#        h2=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'b>', ms = markersize)
+#    if obs[i, 0] == 3:
+#        h3=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'c<', ms = markersize)
+#    if obs[i, 0] == 4:
+#        h4=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'go', ms = markersize)
+#    if obs[i, 0] == 5:
+#        h5=ax2.plot(100*obs[i,NaK]/(obs[i,EC]/100), 100*(obs[i,SO4]+obs[i,Cl])/(obs[i,EC]/100), 'm^', ms = markersize)
 
 ax2.set_xlim(0,100)
 ax2.set_ylim(0,100)
